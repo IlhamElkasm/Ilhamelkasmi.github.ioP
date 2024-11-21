@@ -127,69 +127,97 @@ a {
 /* Hero Section */
 .hero {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f8f9fa, #e4e9f0);
+  color: #333;
+}
+
+.hero-row {
+  display: flex;
+  flex-direction: row; /* الكتابة في اليسار والصورة في اليمين */
   align-items: center;
   justify-content: space-between;
-  padding: 80px 0;
-  color: #333;
-  background-color: #f8f9fa; /* Light background */
+  max-width: 1200px;
+  width: 100%;
 }
 
 .hero-content {
   flex: 1;
-  max-width: 50%;
-  padding-right: 20px; /* Adds spacing between text and image */
-  line-height: 1.6;
+  text-align: left; /* الكتابة في اليسار */
+  padding: 20px;
+}
+
+.hero-greeting {
+  font-size: 20px;
+  font-weight: bold;
+  color: #6c63ff;
 }
 
 .hero-heading {
   font-size: 48px;
-  font-weight: bold;
+  font-weight: 700;
   margin: 10px 0;
   color: #000;
 }
 
 .hero-heading-subtitle {
-  font-size: 24px;
-  color: #666;
+  font-size: 20px;
+  color: #555;
   margin-bottom: 20px;
 }
 
-/* Ensure the image aligns nicely */
+.about-social-list .social-links-row a {
+  display: inline-block;
+  margin-right: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.about-social-list .social-links-row a:hover {
+  transform: scale(1.1);
+}
+
+.about-social-list img {
+  width: 32px;
+  height: 32px;
+}
+
 .hero-img {
   flex: 1;
-  max-width: 50%; /* Restricts the image width to 50% */
   display: flex;
-  justify-content: center; /* Centers the image horizontally */
-  align-items: center; /* Centers the image vertically */
-  padding-left: 20px; /* Adds some space between the text and the image */
+  justify-content: center;
+  align-items: center;
+  max-width: 45%; /* Reduces the image width */
 }
 
 .hero-img img {
   width: 100%;
-  max-width: 379px;
-  object-fit: cover;
-  margin-left: 179%;
-  margin-top: -325px;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Adjustments for smaller screens */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .hero {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+  .hero-row {
+    flex-direction: column; /* Stacks content on smaller screens */
   }
 
   .hero-content, .hero-img {
-      max-width: 100%;
-      text-align: center;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-heading {
+    font-size: 36px;
   }
 
   .hero-img img {
-      max-width: 300px; /* Adjust image size on smaller screens */
+    max-width: 300px;
   }
 }
+
 
 /* About Section */
 .about {
